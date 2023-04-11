@@ -1,5 +1,7 @@
 package br.com.twgl.services;
 
+import br.com.twgl.data.vo.v1.PersonVO;
+import br.com.twgl.mapper.ModelMapper;
 import br.com.twgl.model.Person;
 import br.com.twgl.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,26 +18,28 @@ public class PersonServices {
     @Autowired
     PersonRepository repository;
 
-    public Person findById(Long id){
+    public PersonVO findById(Long id){
         logger.info("Finding one person!");
 
-        return repository.findById(id).orElseThrow();
+        return ModelMapper.parseObject(repository.findById(id).orElseThrow(), PersonVO.class);
     }
 
-    public List<Person> findAll() {
+    public List<PersonVO> findAll() {
 
         logger.info("Finding all persons!");
 
-        return repository.findAll();
+        return ModelMapper.parseListObjects(repository.findAll(), PersonVO.class);
     }
 
-    public Person create(Person person){
+    public PersonVO create(PersonVO person){
         logger.info("Create person!");
 
-        return repository.save(person);
+        var entity = ModelMapper.parseObject(person, Person.class);
+
+        return ModelMapper.parseObject(repository.save(entity), PersonVO.class);
     }
 
-    public Person update(Person person){
+    public PersonVO update(PersonVO person){
         logger.info("Update person!");
 
         Person entity = repository.findById(person.getId()).orElseThrow();
@@ -44,7 +48,7 @@ public class PersonServices {
         entity.setGender(person.getGender());
         entity.setAddress(person.getAddress());
 
-        return repository.save(person);
+        return ModelMapper.parseObject(repository.save(entity), PersonVO.class);
     }
 
     public void delete(Long id){

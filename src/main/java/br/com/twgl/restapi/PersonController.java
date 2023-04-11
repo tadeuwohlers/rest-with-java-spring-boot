@@ -1,5 +1,7 @@
 package br.com.twgl.restapi;
 
+import br.com.twgl.model.Person;
+import br.com.twgl.services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

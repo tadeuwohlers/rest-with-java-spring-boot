@@ -1,4 +1,4 @@
-package br.com.twgl.restapi;
+package br.com.twgl.model;
 
 import jakarta.persistence.*;
 

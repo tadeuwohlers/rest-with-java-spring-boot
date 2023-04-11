@@ -1,5 +1,6 @@
-package br.com.twgl.restapi;
+package br.com.twgl.repository;
 
+import br.com.twgl.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

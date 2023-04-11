@@ -1,11 +1,11 @@
-package br.com.twgl.restapi;
+package br.com.twgl.services;
 
+import br.com.twgl.model.Person;
+import br.com.twgl.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
 @Service

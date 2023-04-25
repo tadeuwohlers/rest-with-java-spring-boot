@@ -1,0 +1,1 @@
+INSERT INTO `person` VALUES (2,'Rua São Paulo, 178 - Toledo MG','Tadeu 7','Male','Wohlers'),(3,'Rua São Paulo, 178 - Toledo MG','Fran','Female','Wohlers'),(5,'Rua São Paulo, 178 - Toledo MG','Fran','Female','Wohlers'),(6,'Rua São Paulo, 178 - Toledo MG','Pedro','Male','Wohlers');

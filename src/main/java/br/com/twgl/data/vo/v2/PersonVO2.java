@@ -1,12 +1,10 @@
-package br.com.twgl.data.vo.v1;
-
-import org.springframework.hateoas.RepresentationModel;
+package br.com.twgl.data.vo.v2;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 
-public class PersonVO extends RepresentationModel<PersonVO> implements Serializable {
+public class PersonVO2 implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private long id;
@@ -15,7 +13,7 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
     private String address;
     private String gender;
 
-    public PersonVO() {
+    public PersonVO2() {
     }
 
     public long getId() {
@@ -38,8 +36,8 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
         return gender;
     }
 
-    public void setId(long key) {
-        this.id = key;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setFirstName(String firstName) {
@@ -62,7 +60,7 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PersonVO person = (PersonVO) o;
+        PersonVO2 person = (PersonVO2) o;
         return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(address, person.address) && Objects.equals(gender, person.gender);
     }
 

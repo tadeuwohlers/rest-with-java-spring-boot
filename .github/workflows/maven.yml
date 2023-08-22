@@ -35,6 +35,6 @@ jobs:
 
     - name: Push to dockerhub
       run: 
-        docker tag ${{ secrets.DOCKER_USERNAME }}/erudio:latest ${{ secrets.DOCKER_USERNAME }}/erudio:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/erudio:${{ github.run_id }}
+        #docker tag ${{ secrets.DOCKER_USERNAME }}/erudio:latest ${{ secrets.DOCKER_USERNAME }}/erudio:${{ github.run_id }}
+        #docker push ${{ secrets.DOCKER_USERNAME }}/erudio:${{ github.run_id }}
         docker push ${{ secrets.DOCKER_USERNAME }}/erudio:latest
